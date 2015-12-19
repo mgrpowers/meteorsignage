@@ -1,1 +1,139 @@
 /* CSS declarations go here */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+html {
+  background-image: url(bg.png), linear-gradient(to bottom,  #1e5799 0%,#7db9e8 100%);
+  background-position: 0 10%;
+  height: 100%;
+  width: 100%;
+}
+body {
+  position: relative;
+  color: #FFF;
+  font-family: helvetica, arial, sans-serif;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  background: rgba(0,0,0,.6);
+  padding: 20px 0;
+  font-size: 16px;
+}
+
+#login-buttons {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.new-ride {
+  margin-left: 10px;
+}
+
+.new-ride input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+h1 {
+  position: relative;
+  text-align: center;
+  font-size: 55px;
+  margin: 0;
+  font-weight: 100;
+}
+
+.rides ul {
+  display: block;
+  list-style: none;
+  list-style-type: none;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+.rides li {
+  width: 50%;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px;
+  color: #000;
+}
+
+.rides .ride {
+  position: relative;
+  margin: 5px;
+  background: rgb(221,237,255);
+  padding: 20px;
+  -webkit-transition: all 1s ease-in-out;
+}
+
+.ride h3 {
+  font-size: 33px;
+  background: -webkit-linear-gradient(#333,rgb(64, 164, 175));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-transition: all 1s ease-in-out;
+}
+
+.rides .ride.down {
+  background: #DA7B7B;
+  position: relative;
+}
+
+.rides .ride:before {
+  position: absolute;
+  -webkit-transition: all 1s ease-in-out;
+  content: "RIDE DOWN";
+  color: rgba(0,0,0,.3);
+  font-size: 45px;
+  margin-right: 0;
+  margin-left: 0;
+  left: 0;
+  top: 50px;
+  opacity: 0;
+  -webkit-transform: rotate(0deg);
+}
+
+.rides .ride.down:before {
+  position: absolute;
+  content: "RIDE DOWN";
+  color: rgba(0,0,0,.3);
+  font-size: 45px;
+  margin-right: 0;
+  margin-left: 0;
+  left: 20px;
+  top: 50px;
+  opacity: 1;
+  -webkit-transform: rotate(15deg);
+}
+
+.rides .ride.down h3 {
+  background: none;
+  color: #FFF;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: initial;
+}
+
+.ride-down-btn {
+  position: absolute;
+  padding: 10px 20px;
+  border-radius: 0;
+  background: #FFF;
+  border: none;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+}

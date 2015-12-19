@@ -3,12 +3,41 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  <div class="header">
+      <h1>Boardwalk Rides!</h1>
+      {{> loginButtons}}
+      {{#if currentUser}}
+        <form class="new-ride">
+          <input type="text" name="ridename" placeholder="Add New Ride" />
+        </form>
+      {{/if}}
+  </div>
+  <div class="container">
+    {{> rides}}
+  </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="rides">
+  <div class="rides">
+    <ul>
+       {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="task">
+  <li>
+    <div class="ride {{#if down}}down{{/if}}">
+      <h3>{{ride}}</h3>
+      {{#if currentUser}}
+        <button class="ride-down-btn">{{#if down}}Re-open ride{{else}}Take Ride Down{{/if}}</button>
+      {{/if}}
+    </div>
+  </li>
+</template>
+
+<template name="ridesound">
+  <audio src="ridedownsound.mp3"></audio>
 </template>
